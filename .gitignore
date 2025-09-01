@@ -12,3 +12,7 @@ Thumbs.db
 .ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
+
+# generados
+model.json
+predicciones.csv
