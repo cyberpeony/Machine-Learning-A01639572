@@ -1,2 +1,2 @@
-echo "numpy>=1.26,<3
-pandas>=2,<3" > requirements.txt
+numpy>=1.26,<3
+pandas>=2,<3
