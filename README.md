@@ -30,6 +30,17 @@ Ya entrenado, para hacer predicciones:
 
 Ese comando imprime en consola las primeras predicciones y guarda un archivo `predicciones.csv` con la columna `prediction`. 
 
+## Novedad entrega 2: Ajuste de hiperparámetros (validación cruzada)
+Para fortalecer mi entrega en esta ocasión, opté por implementar validación cruzada con k-fold y grid search de hiperparámetros (learning_rate y l2_penalty). Esto me permite comparar resultados más eficientemente vs. el framework.
+
+**Ejemplo 1: cross-validation con 5 kfolds**  
+El siguiente comando imprime en consola el promedio de métricas +- desviación estandar de R2, RMSE y MAE:
+`python src/regLinealWine.py train --csv data/winequality-red.csv --target quality \  --model-path model.json --num_iters 6000 --cv 5`
+
+**Ejemplo 2: grid search en hiperparámetros**  
+Para probar varias combinaciones de learning rate y l2 penalty, eligiendo la mejor combinación y mostrando los resultados de la crossvalidation. El mejor modelo (mejores hiperparámetros se entrena en todos los datos y se guarda en model.json):
+`python src/regLinealWine.py train --csv data/winequality-red.csv --target quality \ --model-path model.json --num_iters 6000 --cv 5 \  --grid_lr 0.01 0.05 0.1 --grid_l2 0.0 0.01 0.1`
+
 ## Notas a considerar
 - El modelo se implementó desde 0, sin scikit-learn ni otros frameworks de ML 
 - Solo usa `numpy` y `pandas` para manipulación numérica/de datos
