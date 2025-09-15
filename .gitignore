@@ -16,3 +16,5 @@ Thumbs.db
 # generados
 model.json
 predicciones.csv
+model_sklearn.pkl
+predicciones_sklearn.csv
